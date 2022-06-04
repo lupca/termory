@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+$:.unshift File.dirname(__FILE__) + "/../lib"
+require 'optparse'
+require 'invocker'
+require 'invocker/main'
+
+
+begin
+  Invocker::Console.new.start
+rescue OptionParser::ParseError => ex
+  STDERR.puts "!! #{ex.message}"
+  puts "** use `#{File.basename($0)} --help` for more details..."
+  exit 1
+end
