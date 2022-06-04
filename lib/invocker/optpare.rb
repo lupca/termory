@@ -46,7 +46,7 @@ module Invocker
         end
       end
 
-      def end_conf parser
+      def end_config parser
         parser.separator ""
         parser.separator "Common options:"
         # No argument, shows at tail.  This will print an options summary.
