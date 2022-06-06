@@ -3,12 +3,12 @@ require 'optparse'
 require 'optparse/time'
 require 'ostruct'
 require 'pp'
-require 'invocker/optparsr_options/config'
-require 'invocker/optparsr_options/execute'
-require 'invocker/optparsr_options/database'
+require 'termory/optparsr_options/config'
+require 'termory/optparsr_options/execute'
+require 'termory/optparsr_options/database'
 
-module Invocker 
-  class OptparsrInvocker
+module Termory 
+  class OptparsrTermory
     Version = '1.0.0'
   
     CODES = %w[iso-2022-jp shift_jis euc-jp utf8 binary]
@@ -25,9 +25,9 @@ module Invocker
       def define_options(parser)
         init_config parser
         # add additional options
-        Invocker::OptpareOptions::Configs.define(parser, self)
-        Invocker::OptpareOptions::Executes.define(parser, self)
-        Invocker::OptpareOptions::Databases.define(parser, self)
+        Termory::OptpareOptions::Configs.define(parser, self)
+        Termory::OptpareOptions::Executes.define(parser, self)
+        Termory::OptpareOptions::Databases.define(parser, self)
         end_config parser
       end
 

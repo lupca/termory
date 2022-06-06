@@ -1,4 +1,4 @@
-module Invocker 
+module Termory 
   module OptpareOptions
     class Databases
       def self.define(parser, script_options)

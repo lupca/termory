@@ -1,12 +1,10 @@
 #!/usr/bin/env ruby
 $:.unshift File.dirname(__FILE__) + "/../lib"
 require 'optparse'
-require 'invocker'
-require 'invocker/main'
-
+require 'termory'
 
 begin
-  Invocker::Console.new.start
+  Termory::Console.new.start
 rescue OptionParser::ParseError => ex
   STDERR.puts "!! #{ex.message}"
   puts "** use `#{File.basename($0)} --help` for more details..."
