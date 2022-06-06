@@ -1,12 +1,12 @@
 Gem::Specification.new do |s|
-    s.name        = 'invocker'
+    s.name        = 'termory'
     s.version     = '0.0.0'
-    s.summary     = "Invocker, this is magic!"
+    s.summary     = "Termory, this is magic!"
     s.description = "A magic for life developer."
     s.authors     = ["Dang Thanh Tung"]
     s.email       = 'dangthanhtung.open@gmail.com'
-    s.files       = ["lib/invocker.rb"]
-    s.executables = ['invocker']
+    s.files       = ["lib/termory.rb"]
+    s.executables = ['termory']
     s.homepage    = 'https://rubygems.org/gems/hola'
     s.license     = 'MIT'
     s.files = Dir.glob("{bin,lib}/**/*")

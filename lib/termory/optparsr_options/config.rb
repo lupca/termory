@@ -1,4 +1,4 @@
-module Invocker 
+module Termory 
   module OptpareOptions
     class Executes
       def self.define(parser, script_options)

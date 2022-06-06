@@ -1,20 +1,20 @@
-require 'invocker/db'
-require 'invocker/optpare'
-require 'invocker/model'
+require 'termory/db'
+require 'termory/optpare'
+require 'termory/model'
 
-module Invocker
+module Termory
   class Console
 
     def initialize
-      invocker = Invocker::OptparsrInvocker.new
-      @options = invocker.parse(ARGV)
+      termory = Termory::OptparsrTermory.new
+      @options = termory.parse(ARGV)
     end
 
     def start
       configs if @options.config
       executes if @options.execute
-      Invocker::Database.create if @options.database == :create
-      Invocker::Database.drop if @options.database == :drop
+      Termory::Database.create if @options.database == :create
+      Termory::Database.drop if @options.database == :drop
     end
 
     private
@@ -26,16 +26,16 @@ module Invocker
       case @options.config_type
       when 'create'
         command = ARGV[1]
-        Invocker::Model::Command.create key: key, command: command
+        Termory::Model::Command.create key: key, command: command
         puts "Done!"
       when 'delete'
-        command = Invocker::Model::Command.find_by(key: key)
+        command = Termory::Model::Command.find_by(key: key)
         return puts 'Not thing unset' if command.blank?
 
         command.destroy
       when 'list'
         puts "num  | id | key          | command"
-        Invocker::Model::Command.all.each_with_index do |command, num|
+        Termory::Model::Command.all.each_with_index do |command, num|
           puts "#{num + 1}.   |   #{command.id}  | #{command.key} | #{command.command}"
         end
       end
@@ -46,7 +46,7 @@ module Invocker
       # puts alias_key
       # key = alias_key.gsub "alias.", ''
       # puts ARGV
-      command = Invocker::Model::Command.find_by(key: ARGV[1])
+      command = Termory::Model::Command.find_by(key: ARGV[1])
       exec command.command
     end
   end
