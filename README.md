@@ -1,5 +1,14 @@
 # Termory(terminar - memmory): A Command Line Tool
 
+[![Gem Version](http://img.shields.io/gem/v/gems.svg)][gem]
+[![Build Status](https://github.com/rubygems/gems/workflows/ubuntu/badge.svg)][gh-actions]
+[![Code Climate](https://api.codeclimate.com/v1/badges/45ff982a29d7a000ee84/maintainability)][codeclimate]
+
+[gem]: https://rubygems.org/gems/gems
+[gh-actions]: https://github.com/rubygems/gems/actions
+[codeclimate]: https://codeclimate.com/github/rubygems/gems/maintainability
+
+
 Termory is a simple tool for building command line utilities
 
 ## Quick Start
