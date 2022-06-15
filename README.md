@@ -18,7 +18,7 @@ and
 ### Configuration
 1. Init data
 ```sh
-termory db -c
+termory db create
 ```
 2. Setting your alias
 
@@ -30,6 +30,14 @@ termory config alias.xxx "your config"
 
 ```sh
 termory exec xxx
+```
+
+4. List your alias
+
+```sh
+termory config -l
+# or
+termory config --list
 ```
 
 ## License
